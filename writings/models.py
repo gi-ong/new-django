@@ -20,8 +20,13 @@ class Writing(core_models.TimeStampedModel):
 
     title = models.CharField(max_length=100)
     text = models.TextField()
-    category = models.ForeignKey("categories.Category", on_delete=models.CASCADE)
-    user = models.ForeignKey("users.User", on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        "categories.Category", related_name="category", on_delete=models.CASCADE
+    )
+    author = models.ForeignKey(
+        "users.User", related_name="user", on_delete=models.CASCADE
+    )
+    likes = models.ManyToManyField("users.User", related_name="likes", blank=True)
 
     def __str__(self):
         return self.title
