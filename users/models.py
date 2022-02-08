@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django_countries.fields import CountryField
 
 
 class User(AbstractUser):
@@ -33,5 +34,5 @@ class User(AbstractUser):
     language = models.CharField(
         choices=LANGUAGE_CHOICES, max_length=2, null=True, blank=True
     )
-
+    country = CountryField()
     superhost = models.BooleanField(default=False)

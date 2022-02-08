@@ -5,4 +5,13 @@ from . import models
 @admin.register(models.Writing)
 class WritingAdmin(admin.ModelAdmin):
 
-    """Custom Writing Admin"""
+    """Writing Admin Definition"""
+
+    pass
+
+
+@admin.register(models.Photo)
+class PhotoAdmin(admin.ModelAdmin):
+    """Photo Admin Definition"""
+
+    pass
