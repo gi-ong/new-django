@@ -8,10 +8,10 @@ class Review(core_models.TimeStampedModel):
 
     review = models.TextField()
     user = models.ForeignKey(
-        "users.User", related_name="user", on_delete=models.CASCADE
+        "users.User", related_name="reviews", on_delete=models.CASCADE
     )
     writing = models.ForeignKey(
-        "writings.Writing", related_name="writing", on_delete=models.CASCADE
+        "writings.Writing", related_name="reviews", on_delete=models.CASCADE
     )
 
     def __str__(self):

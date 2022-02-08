@@ -8,10 +8,10 @@ class List(core_models.TimeStampedModel):
 
     name = models.CharField(max_length=80)
     user = models.ForeignKey(
-        "users.User", related_name="user", on_delete=models.CASCADE
+        "users.User", related_name="lists", on_delete=models.CASCADE
     )
     writings = models.ManyToManyField(
-        "writings.Writing", related_name="writings", blank=True
+        "writings.Writing", related_name="lists", blank=True
     )
 
     def __str__(self):
